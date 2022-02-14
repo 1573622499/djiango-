@@ -1,0 +1,25 @@
+# 本文档说明整个爬虫项目各个部分的含义
+1、scrapy项目的结构
+    项目名字
+        项目名字
+            spiders文件夹（存储的是爬虫文件）
+                init
+                自定义的爬虫文件  核心core！！！
+            init
+            intems      定义数据结构的地方   爬取的数据都包含哪些
+            middleware  中间件 代理
+            pipelines   管道  用于处理下载数据
+            setting     配置文件    robot协议 UA定义、
+
+2、response的属性和方法：
+response.text  获取源码数据（字符串类型）
+response.body  获取源码数据（字节型数据）[二进制数据]
+补充：
+编码和解码      可以看成是字符串和字节数据的交换
+编码：字符串转字节型数据
+解码：字节型数据转字符串
+response.xpath()  可以直接在scrapy框架里进行xpath解析    也可以bs4   response.css()
+注意xpath返回的是selector列表数据
+response.extract()   提取selector对象的data属性值
+response.extract_first()     提取selector列表
+
